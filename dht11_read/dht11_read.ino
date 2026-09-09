@@ -37,6 +37,15 @@ void handleNotFound() {
   server.send(404, "application/json", response);
 }
 
+void handleMetrics() {
+  char response[128];
+  snprintf(response, sizeof(response),
+           "# TYPE temperature gauge\ntemperature %.2f\n# TYPE humidity gauge\nhumidity %.2f\n",
+           isnan(temperature) ? 0.0 : temperature,
+           isnan(humidity) ? 0.0 : humidity);
+  server.send(200, "text/plain; version=0.0.4", response);
+}
+
 void setup() {
   Serial.begin(115200);
   dht.begin();
@@ -55,6 +64,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.on("/", handleRoot);
+  server.on("/metrics", handleMetrics);
   server.onNotFound(handleNotFound);
   server.begin();
 

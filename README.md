@@ -1,6 +1,6 @@
 # ESP32 Temperature & Humidity Monitor
 
-Reads a DHT11 sensor and serves over HTTP.
+Reads a DHT11 sensor and serves over HTTP as json or Prometheus output
 
 ## Requirements
 
@@ -48,7 +48,7 @@ To deploy to the board, connect it to USB and run `make deploy`.
 
 ## Usage
 
-### Request
+### Json
 
 ```bash
 curl http://<device-ip>
@@ -61,3 +61,18 @@ curl http://<device-ip>
 ```
 
 If the sensor read fails, the response includes an `error` field instead.
+
+### Prometheus metrics
+
+```bash
+curl http://<device-ip>/metrics
+```
+
+### Response
+
+```
+# TYPE temperature gauge
+temperature 27.20
+# TYPE humidity gauge
+humidity 46.10
+```
