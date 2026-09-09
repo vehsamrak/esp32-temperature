@@ -51,7 +51,7 @@ To deploy to the board, connect it to USB and run `make deploy`.
 ### Request
 
 ```bash
-curl http://<device-ip>/
+curl http://<device-ip>
 ```
 
 ### Response
