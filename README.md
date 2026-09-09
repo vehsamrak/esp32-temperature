@@ -41,6 +41,7 @@ Fill wifi credentials in `dht11_read/credentials.h`:
 ```bash
 make build    # compile and configure
 make deploy   # build and upload to /dev/ttyUSB0
+make monitor  # tail for microcontroller output log (must be connected as USB)
 ```
 
 To deploy to the board, connect it to USB and run `make deploy`.
