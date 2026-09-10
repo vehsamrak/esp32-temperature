@@ -1,0 +1,47 @@
+{
+  "uid": "esp32-temp-hum",
+  "title": "ESP32 Temperature & Humidity",
+  "tags": ["esp32"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "auto",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Temperature",
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "custom": { "drawStyle": "line" }
+        }
+      },
+      "targets": [
+        {
+          "expr": "temperature",
+          "legendFormat": "{{device}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Humidity",
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "custom": { "drawStyle": "line" }
+        }
+      },
+      "targets": [
+        {
+          "expr": "humidity",
+          "legendFormat": "{{device}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 }
+    }
+  ]
+}

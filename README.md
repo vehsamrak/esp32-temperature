@@ -76,3 +76,21 @@ temperature 27.20
 # TYPE humidity gauge
 humidity 46.10
 ```
+
+## Local monitoring
+
+To view the metrics locally, Prometheus + Grafana are available in `monitoring/`.
+
+```bash
+make monitoring          # start grafana and prometheus
+make monitoring-stop     # stop it
+```
+
+Open `http://localhost:3000` login/pass: admin/admin.
+Dashboard with temperature and humidity provisioned automatically. Prometheus scrapes the device at `http://<device-ip>/metrics`.
+
+Configure your device IP in `.env` (created automatically from `.env.dist` on first run):
+
+```
+ESP32_IP=192.168.0.100
+```
