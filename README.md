@@ -2,6 +2,9 @@
 
 Reads a DHT11 sensor and serves over HTTP as json or Prometheus output
 
+<img width="600" height="668" alt="photo-1" src="https://github.com/user-attachments/assets/9ce77b8d-ccb6-4daf-8e4f-4a8551f5fed6" />
+<img width="1000" height="250" alt="grafana_small" src="https://github.com/user-attachments/assets/8eb1c8e5-2439-4430-b3d7-966179c9f893" />
+
 ## Requirements
 
 - [arduino-cli](https://arduino.github.io/arduino-cli/)
