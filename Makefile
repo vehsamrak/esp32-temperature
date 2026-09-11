@@ -1,7 +1,7 @@
 BOARD_PORT ?= /dev/ttyUSB0
 FQBN = esp32:esp32:esp32
 
-.PHONY: monitor
+.PHONY: logs
 logs:
 	arduino-cli monitor -p $(BOARD_PORT) --config 115200
 
