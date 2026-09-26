@@ -4,8 +4,8 @@
 #include <DHT.h>
 #include "credentials.h"
 
-#define DHTPIN 13
-#define DHTTYPE DHT11
+constexpr int DHTPIN = 13;
+constexpr int DHTTYPE = DHT11;
 
 DHT dht(DHTPIN, DHTTYPE);
 WebServer server(80);

@@ -11,18 +11,18 @@ logs-raw:
 
 .PHONY: build
 build: check-config
-	arduino-cli compile --fqbn $(FQBN) ./dht11_read 2>&1 | tail -15
+	arduino-cli compile --fqbn $(FQBN) ./dht11 2>&1
 
 .PHONY: check-config
 check-config:
-	@test -f ./dht11_read/credentials.h || { \
-		cp ./dht11_read/credentials.h.dist ./dht11_read/credentials.h; \
+	@test -f ./dht11/credentials.h || { \
+		cp ./dht11/credentials.h.dist ./dht11/credentials.h; \
 		echo "credentials.h created from template. Fill in your Wi-Fi credentials."; \
 	}
 
 .PHONY: upload
 upload:
-	arduino-cli upload -p $(BOARD_PORT) --fqbn $(FQBN) ./dht11_read 2>&1 | tail -5
+	arduino-cli upload -p $(BOARD_PORT) --fqbn $(FQBN) ./dht11 2>&1
 
 .PHONY: deploy
 deploy: build upload

@@ -29,7 +29,7 @@ Copy the credentials template and fill in Wi-Fi network:
 make check-config
 ```
 
-Fill wifi credentials in `dht11_read/credentials.h`:
+Fill wifi credentials in `dht11/credentials.h`:
 
 ## Wiring
 
